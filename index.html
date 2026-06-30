@@ -5,49 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retrac</title>
 
+<link rel="stylesheet" href="styles.css">
+
 <style>
 body{
     margin:0;
-    font-family:system-ui;
+    font-family:system-ui, -apple-system, Segoe UI;
     background:#07070a;
     color:white;
-    overflow:hidden;
 }
 
-/* background glow */
+/* background */
 .bg{
     position:fixed;
     inset:0;
     background:
-      radial-gradient(circle at 20% 20%, rgba(255,45,45,0.18), transparent 40%),
-      radial-gradient(circle at 80% 80%, rgba(255,45,45,0.10), transparent 40%);
+      radial-gradient(circle at 20% 20%, rgba(255,45,45,0.12), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%);
     z-index:-1;
 }
 
 /* layout */
 .hero{
     text-align:center;
-    padding:120px 20px;
+    padding:120px 20px 60px;
 }
 
 /* title */
 h1{
-    font-size:3.2rem;
+    font-size:3.5rem;
+    letter-spacing:-1px;
     margin-bottom:10px;
 }
 
 /* rotating text */
 h2{
-    color:#ff2d2d;
+    color:#ff3b3b;
+    font-weight:500;
     transition:0.3s;
+}
+
+/* subtitle */
+p{
+    color:#aaa;
+    max-width:500px;
+    margin:15px auto;
 }
 
 /* button */
 .btn{
     display:inline-block;
-    margin-top:30px;
-    padding:14px 20px;
-    border-radius:12px;
+    margin-top:25px;
+    padding:14px 22px;
+    border-radius:14px;
     background:linear-gradient(135deg,#ff2d2d,#ff5a5a);
     color:white;
     text-decoration:none;
@@ -56,7 +66,31 @@ h2{
 }
 
 .btn:hover{
-    transform:scale(1.05);
+    transform:translateY(-3px);
+}
+
+/* cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:18px;
+    padding:25px;
+    backdrop-filter:blur(12px);
+    transition:0.25s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,45,45,0.4);
 }
 </style>
 
@@ -72,11 +106,31 @@ h2{
 
     <h2 id="rotatingText">Clean UI. Fast Performance.</h2>
 
-    <p style="color:#aaa;">
-        Modern software interface built for speed.
+    <p>
+        A modern interface built for speed, clarity, and smooth navigation.
     </p>
 
     <a class="btn" href="pricing.html">Get Started</a>
+
+</div>
+
+<!-- preview section -->
+<div class="grid">
+
+    <div class="card">
+        ⚡ Fast Performance
+        <p>Optimized UI system for smooth experience</p>
+    </div>
+
+    <div class="card">
+        🎨 Clean Design
+        <p>Minimal SaaS-style interface</p>
+    </div>
+
+    <div class="card">
+        🔒 Secure Structure
+        <p>Stable layout and consistent system</p>
+    </div>
 
 </div>
 
